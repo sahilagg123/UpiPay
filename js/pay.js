@@ -9,14 +9,17 @@ if (virpa == null) {
     var vpa = params.get('vpa');
     if (am == null) {
         document.getElementById("payingam").innerHTML = "You are paying";
-        var upilink = "upi://pay?pa=" + vpa + "&tn=Sahil&pa=" + vpa + "&cu=INR";
-        var qr_string = "upi://pay?pa=" + vpa + "~tn=Sahil~pa=" + vpa + "~cu=INR"
+          // var upilink = "upi://pay?pa" + vpa + "&tn=Sahil&pa=" + vpa + "&cu=INR";
+        var upilink="upi://pay?pa" +vpa +"&amp;pn=Sahil&amp;cu=INR";
+        // var qr_string = "upi://pay?pa=" + vpa + "~tn=Sahil~pa=" + vpa + "~cu=INR"
+        var qr_string ="upi://pay?pa" +vpa +"~amp;pn=Sahil~amp;cu=INR";
     } else {
         var amount = params.get('amount');
-        var upilink = "upi://pay?pa=" + vpa + "&tn=Sahil&pa=" + vpa + "&cu=INR" + "&am=" + amount;
-        var qr_string = "upi://pay?pa=" + vpa + "~tn=Sahil~pa=" + vpa + "~cu=INR" + "~am=" + amount;
+        // var upilink = "upi://pay?pa=" + vpa + "&tn=Sahil&pa=" + vpa + "&cu=INR" + "&am=" + amount;
+        var upilink="upi://pay?pa" +vpa +"&amp;pn=Sahil&amp;cu=INR"+"&am="+amount;
+        // var qr_string = "upi://pay?pa=" + vpa + "~tn=Sahil~pa=" + vpa + "~cu=INR" + "~am=" + amount;
+        var qr_string ="upi://pay?pa" +vpa +"~amp;pn=Sahil~amp;cu=INR"+"~am="+amount;
         document.getElementById("payingam").innerHTML = "You are paying " + amount + "₹";
-
     }
 
     document.getElementById("vpa").innerHTML = vpa;
